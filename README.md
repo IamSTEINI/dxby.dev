@@ -77,4 +77,4 @@ This project uses [ESLint](https://eslint.org/) for code analysis and [Prettier]
 
 This project is licensed under the [Apache 2.0](LICENSE).
 
-<img src="card.png" style="width: 100%; max-width: 150px;" alt="Stein card">
+<img src="card.png" width="150" alt="Stein card" style="max-width: 100%;"/>
