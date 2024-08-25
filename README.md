@@ -77,4 +77,4 @@ This project uses [ESLint](https://eslint.org/) for code analysis and [Prettier]
 
 This project is licensed under the [Apache 2.0](LICENSE).
 
-<img src="card.png" width="150" alt="Stein card" style="max-width: 100%;"/>
+<img href="https://dxby.dev" src="card.png" width="150" alt="Stein card" style="max-width: 100%;"/>
