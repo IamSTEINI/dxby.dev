@@ -1,5 +1,5 @@
 .nav-link {
-    @apply font-[500] text-lg relative inline-block m-0 no-underline text-white;
+    @apply font-[500] text-lg relative cursor-pointer inline-block m-0 no-underline text-white;
 }
 .nav-link:hover {
     @apply text-purple-400;

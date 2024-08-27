@@ -220,7 +220,7 @@ const BootScreen: React.FC<BootScreenProps> = ({ children }) => {
 
     return (
         <>
-            {localStorage.getItem("bootshown") != "tuze" && (
+            {localStorage.getItem("bootshown") != "true" && (
                 <div
                     className={`fixed inset-0 flex select-none p-2 flex-col 
                     items-start justify-start text-gray-200 font-mono text-xs 

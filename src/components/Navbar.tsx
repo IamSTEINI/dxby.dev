@@ -16,7 +16,7 @@ const Navbar = () => {
 
     return (
         <motion.div
-            className="w-full z-[999] p-4 bg-[#151515] text-white"
+            className="w-full z-[999] p-4 bg-[#151515] text-white selection:text-purple-400 select-none selection:bg-[#191919]"
             initial={{ opacity: 0, y: -100 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.1 }}>

@@ -22,9 +22,13 @@ import BootScreen from "@/components/ui/BootScreen";
         }
         * {
             font-family: "Geist";
+            -webkit-user-drag: none;
         }
         *::-webkit-scrollbar {
             display: none;
+        }
+        *::selection {
+            background-color: ##c084fc;
         }
     </style>
     <script type="text/javascript">
@@ -42,9 +46,14 @@ import BootScreen from "@/components/ui/BootScreen";
     </script>
 </head>
 <body class="bg-[#121212] text-white">
-    <BootScreen  client:only="react">
+    <BootScreen client:only="react">
         <Navbar client:load/>
-        <div class="w-full h-full p-2"><slot /></div>
+        <div class="w-full h-full p-2 selection:text-purple-400 selection:bg-[#191919]"><slot /></div>
     </BootScreen>
+    <div class="absolute bottom-5 w-full flex flex-col items-center justify-center">
+       <div class="w-full flex flex-row justify-center items-center">
+        <a href="https://github.com/IamSTEINI/dxby.dev" class="hover:brightness-75 brightness-50 transition-all ease-in duration-100 cursor-pointer text-white">Source</a>
+    </div>
+    </div>
 </body>
 </html>
