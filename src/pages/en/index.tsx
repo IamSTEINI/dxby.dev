@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState, type ReactNode } from "react";
 import SlowType from "@/components/ui/SlowType";
-import { useAnimation, motion } from "framer-motion";
+import { useAnimation, motion, useInView } from "framer-motion";
 import Cypher from "@/components/ui/CypherText";
 import {
   slideInFromBottom,
@@ -22,6 +22,15 @@ const Home: React.FC = () => {
   const controls = useAnimation();
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
   const [imgError, setImgError] = useState(false);
+  const ref = useRef(null);
+	const control = useAnimation();
+	const inView = useInView(ref);
+
+  useEffect(() => {
+		if (inView) {
+			control.start("end");
+		}
+	}, [control, inView]);
 
   useEffect(() => {
     const loopAnimation = async () => {
@@ -121,10 +130,10 @@ const Home: React.FC = () => {
           variants={slideInFromLeft(0.7, 0.2)}
           className="mt-5 w-10/12 h-fit flex justify-start items-center"
         >
-          <span className="text-3xl relative w-full text-start font-bold tracking-wide text-nowrap">
+          <span className="text-[35px] sm:text-3xl relative w-full text-start font-bold tracking-wide text-nowrap">
             <SlowType text="Contact me" typingSpeed={8000} />
             <span className="absolute left-0 rotate-3 hover:-rotate-3 transition-all duration-75 ease-in-out cursor-pointer text-purple-400 bg-[#191919] text-center w-fit h-fit">
-              <SlowType text="Contact me " typingSpeed={14000} />
+              <SlowType text="Contact me " typingSpeed={8000} delay={1000} />
             </span>
             <motion.div
               initial={{ width: 0 }}
@@ -141,13 +150,10 @@ const Home: React.FC = () => {
             variants={slideInFromBottom(0.7, 0.2)}
             className="w-full"
           >
-            <Contact
-              url="https://github.com/IamSTEINI/IamSTEINI"
-              value="IamSTEINI"
-            >
-              <FaGithub size={32} />
+            <Contact url="https://discord.com/" value="dxby" most={true}>
+              <FaDiscord size={32} />
               <span className="group-hover:opacity-100 opacity-0 group-hover:w-[80px] w-[0px] transition-all ease-in duration-100">
-                Github
+                Discord
               </span>
             </Contact>
           </motion.div>
@@ -157,10 +163,13 @@ const Home: React.FC = () => {
             variants={slideInFromBottom(1, 0.2)}
             className="w-full"
           >
-            <Contact url="https://discord.com/" value="dxby">
-              <FaDiscord size={32} />
+            <Contact
+              url="https://github.com/IamSTEINI/IamSTEINI"
+              value="IamSTEINI"
+            >
+              <FaGithub size={32} />
               <span className="group-hover:opacity-100 opacity-0 group-hover:w-[80px] w-[0px] transition-all ease-in duration-100">
-                Discord
+                Github
               </span>
             </Contact>
           </motion.div>
@@ -185,12 +194,54 @@ const Home: React.FC = () => {
           >
             <Contact url="/public_key.txt" value="xsBNBGbPa...">
               <FaInbox size={32} />
-              <span className="group-hover:opacity-100 opacity-0 group-hover:w-[80px] w-[0px] transition-all ease-in duration-100">
+              <span className="group-hover:opacity-100 opacity-0 mr-2 group-hover:w-[80px] w-[0px] transition-all ease-in duration-100">
                 PGP KEY
               </span>
             </Contact>
           </motion.div>
         </div>
+        <motion.div
+          initial="start"
+          animate="end"
+          variants={slideInFromRight(2, 0.2)}
+          className="mt-10 w-10/12 h-fit flex justify-start items-center"
+        >
+          {/* TODO: ADD controls, slide in when seeing via skt playground cards + move it to about me */}
+          <span className="text-[35px] sm:text-3xl relative w-full text-start font-bold tracking-wide text-nowrap">
+            <SlowType text="My projects" typingSpeed={8000} delay={1500} />
+            <span className="absolute left-0 rotate-3 hover:-rotate-3 transition-all duration-75 ease-in-out cursor-pointer text-purple-400 bg-[#191919] text-center w-fit h-fit">
+              <SlowType text="My projects" typingSpeed={8000} delay={2500} />
+            </span>
+            <motion.div
+              initial={{ width: 0 }}
+              animate={{ width: "100%" }}
+              transition={{ duration: 1, delay: 0.75 }}
+              className="h-[2px] bg-purple-400 rounded-full mt-3"
+            />
+          </span>
+        </motion.div>
+
+        <motion.div
+          ref={ref}
+          initial="start"
+          animate={control}
+          variants={slideInFromRight(0, 0.2)}
+          className="mt-10 w-10/12 h-fit flex justify-start items-center"
+        >
+          {/* TODO: ADD controls, slide in when seeing via skt playground cards */}
+          <span className="text-[35px] sm:text-3xl relative w-full text-start font-bold tracking-wide text-nowrap">
+            <SlowType text="Friends" typingSpeed={8000} delay={3000} />
+            <span className="absolute left-0 rotate-3 hover:-rotate-3 transition-all duration-75 ease-in-out cursor-pointer text-purple-400 bg-[#191919] text-center w-fit h-fit">
+              <SlowType text="Friends" typingSpeed={8000}  delay={4000}/>
+            </span>
+            <motion.div
+              initial={{ width: 0 }}
+              animate={{ width: "100%" }}
+              transition={{ duration: 1, delay: 0.75 }}
+              className="h-[2px] bg-purple-400 rounded-full mt-3"
+            />
+          </span>
+        </motion.div>
       </div>
     </main>
   );
@@ -201,21 +252,25 @@ export default Home;
 interface ContactProps {
   url: string;
   value: string;
+  most?: boolean;
   children?: ReactNode;
 }
 
-const Contact: React.FC<ContactProps> = ({ url, value, children }) => {
+const Contact: React.FC<ContactProps> = ({ url, value, children, most }) => {
   return (
-    <a
-      href={url}
-      className="p-2 select-none bg-[#212121] flex h-[60px] w-full group sm:w-fit min-w-[230px] sm:h-[50px] items-center gap-x-2 rounded-md transition-all ease-in duration-100 cursor-pointer border-transparent border hover:border-purple-400"
-    >
-      <div className="text-purple-400 flex flex-row text-nowrap items-center text-xl justify-start gap-x-2">
-        {children}
-      </div>
-      <span className="border-l border-purple-400 pl-5 text-2xl sm:font-normal font-bold sm:text-xl">
-        {value}
-      </span>
-    </a>
+    <>
+      {most && <span className="text-purple-400">MOST ACTIVE</span>}
+      <a
+        href={url}
+        className={`p-2 select-none bg-[#212121] flex h-[60px] w-full group sm:w-fit min-w-[230px] sm:h-[50px] items-center gap-x-2 rounded-md transition-all ease-in duration-100 cursor-pointer ${most ? `border-4 border-purple-800` : `border-transparent border`}  hover:border-purple-400`}
+      >
+        <div className="text-purple-400 flex flex-row text-nowrap items-center text-xl justify-start gap-x-2">
+          {children}
+        </div>
+        <span className="border-l border-purple-400 pl-5 text-2xl sm:font-normal font-bold sm:text-xl">
+          {value}
+        </span>
+      </a>
+    </>
   );
 };

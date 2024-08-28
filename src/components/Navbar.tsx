@@ -60,7 +60,7 @@ const Navbar = () => {
       </ul>
       <ul className="flex flex-row right-5 items-center absolute gap-x-2 text-purple-400 ">
         <p className="lg:block hidden">{"{ "}</p>
-        <div className="opacity-50 w-[120px] text-center text-white lg:block hidden">
+        <div className="opacity-50 w-[120px] text-nowrap text-center text-white lg:block hidden">
           <LiveTimeComponent />
         </div>
         <p className="lg:block hidden">{" }"}</p>
