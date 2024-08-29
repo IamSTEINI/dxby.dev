@@ -93,11 +93,11 @@ const Home: React.FC = () => {
             variants={slideInFromTop(0.2, 0.2)}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
-            className="text-4xl font-bold flex-nowrap h-full justify-center items-center flex tracking-wider cursor-default"
+            className="text-3xl sm:text-4xl font-bold flex-nowrap h-full justify-center items-center flex tracking-wider cursor-default"
           >
             Hey, Ich bin
             <div
-              className={`text-4xl ml-2 mt-1 cursor-pointer font-black bg-clip-text ${isHovered ? "hidden" : "block"} pointer-events-none bg-gradient-to-br text-transparent from-purple-400 to-purple-950`}
+              className={`text-3xl sm:text-5xl ml-2 mt-0 cursor-pointer font-black bg-clip-text ${isHovered ? "hidden" : "block"} pointer-events-none bg-gradient-to-br text-transparent from-purple-400 to-purple-950`}
             >
               STEIN
             </div>
