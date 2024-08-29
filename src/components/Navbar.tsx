@@ -23,9 +23,15 @@ const Navbar = () => {
       transition={{ duration: 0.1 }}
     >
       <ul className="flex space-x-5 items-center justify-center text-nowrap">
+        <span className="font-bold text-purple-400 -ml-3 sm:block hidden select-none">//</span>
         <li>
           <a href={`/${language}/`} className="nav-link">
             Home
+          </a>
+        </li>
+        <li>
+          <a href={`/${language}/projects`} className="nav-link">
+            Projects
           </a>
         </li>
         <li>

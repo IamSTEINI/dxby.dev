@@ -1,0 +1,63 @@
+---
+import { LayoutGroup } from "framer-motion";
+import SlowType from "../../../components/ui/SlowType";
+import Layout from "../../../layouts/Layout.astro";
+import GithubCard from "../../../components/GithubCard";
+---
+
+<Layout>
+  <main class="w-full h-full flex flex-col justify-center items-center">
+    <div
+      class="w-full max-w-[1000px] flex h-fit flex-col items-center justify-start mt-10"
+    >
+      <div class="mt-10 w-10/12 h-fit flex justify-start items-center">
+        <span
+          class="text-[35px] select-none sm:text-3xl relative w-full text-start font-bold tracking-wide text-nowrap"
+        >
+          <SlowType text="My projects" typingSpeed={8000} client:load />
+          <span
+            class="absolute left-0 rotate-3 hover:-rotate-3 transition-all duration-75 ease-in-out cursor-pointer text-purple-400 bg-[#191919] text-center w-fit h-fit"
+          >
+            <SlowType
+              text="My projects"
+              typingSpeed={8000}
+              delay={1000}
+              client:load
+            />
+          </span>
+        </span>
+      </div>
+      <div class="w-10/12 mt-10 h-full flex flex-col">
+        <GithubCard
+          name="This website"
+          link="https://github.com/IamsteinI/dxby.dev"
+          language="TypeScript"
+        />
+        <GithubCard
+          name="Dxbyn"
+          link=""
+          img_url="https://i.imgur.com/C0vbv0J.png"
+          archived
+          no_github
+          language="React"
+        />
+        <GithubCard
+          name="Whisper"
+          link=""
+          img_url="https://i.imgur.com/h7KzTAu.png"
+          archived
+          no_github
+          language="React"
+        />
+        <GithubCard
+          name="Steinbank"
+          link=""
+          img_url="https://i.imgur.com/J8jsTrS.png"
+          archived
+          no_github
+          language="React"
+        />
+      </div>
+    </div>
+  </main>
+</Layout>

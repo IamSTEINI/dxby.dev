@@ -1,0 +1,31 @@
+---
+import SlowType from "@/components/ui/SlowType";
+import Layout from "@/layouts/Layout.astro";
+---
+
+<Layout>
+  <main class="w-full h-full flex flex-col justify-center items-center">
+    <div
+      class="w-full max-w-[1000px] flex h-fit flex-col items-center justify-start mt-10"
+    >
+      <div class="mt-10 w-10/12 h-fit flex flex-col justify-start">
+        <span
+          class="text-[35px] select-none sm:text-3xl relative w-full text-start font-bold tracking-wide text-nowrap"
+        >
+          <SlowType text="Articles" typingSpeed={8000} client:load />
+          <span
+            class="absolute left-0 rotate-3 hover:-rotate-3 transition-all duration-75 ease-in-out cursor-pointer text-purple-400 bg-[#191919] text-center w-fit h-fit"
+          >
+            <SlowType
+              text="Articles"
+              typingSpeed={8000}
+              delay={1000}
+              client:load
+            />
+          </span>
+        </span>
+        <span class="text-xl mt-10 text-white/50">One day I will write a few articles here.</span>
+      </div>
+    </div>
+  </main></Layout
+>

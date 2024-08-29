@@ -94,7 +94,7 @@ const Home: React.FC = () => {
             onMouseLeave={handleMouseLeave}
             className="text-4xl font-bold flex-nowrap h-full justify-center items-center flex tracking-wider cursor-default"
           >
-            Hey, I'm
+            Hey, Ich bin
             <div
               className={`text-4xl ml-2 mt-1 cursor-pointer font-black bg-clip-text ${isHovered ? "hidden" : "block"} pointer-events-none bg-gradient-to-br text-transparent from-purple-400 to-purple-950`}
             >
@@ -118,7 +118,7 @@ const Home: React.FC = () => {
           <span className="h-[100px]">
             <Cypher
               css="text-xl max-w-[700px]"
-              text="someone from germany who's self-taught in software and web development and loves Better call saul."
+              text="jemand aus Deutschland, der sich Software- und Webentwicklung selbst beigebracht hat und Better call saul liebt."
               randomInterval={1}
               revealInterval={30}
             />
@@ -134,7 +134,7 @@ const Home: React.FC = () => {
             href="projects"
             className="mt-0 mb-5 border-l-2 pl-3 transition-all ease-linear duration-100 border-[#212121] hover:brightness-75 text-2xl font-semibold text-purple-400"
           >
-            See my projects
+            Meine projekte
           </a>
         </motion.div>
         <motion.div
@@ -144,9 +144,9 @@ const Home: React.FC = () => {
           className="mt-5 w-10/12 h-fit flex justify-start items-center"
         >
           <span className="text-[35px] select-none sm:text-3xl relative w-full text-start font-bold tracking-wide text-nowrap">
-            <SlowType text="Contact me" typingSpeed={8000} />
+            <SlowType text="Kontakt" typingSpeed={8000} />
             <span className="absolute left-0 rotate-3 hover:-rotate-3 transition-all duration-75 ease-in-out cursor-pointer text-purple-400 bg-[#191919] text-center w-fit h-fit">
-              <SlowType text="Contact me " typingSpeed={8000} delay={1000} />
+              <SlowType text="Kontakt" typingSpeed={8000} delay={1000} />
             </span>
             <motion.div
               initial={{ width: 0 }}
@@ -222,9 +222,9 @@ const Home: React.FC = () => {
           className="mt-10 w-10/12 h-fit flex justify-start items-center"
         >
           <span className="text-[35px] select-none sm:text-3xl relative w-full text-start font-bold tracking-wide text-nowrap">
-            <SlowType text="Friends" typingSpeed={8000} delay={2000} />
+            <SlowType text="Freunde" typingSpeed={8000} delay={2000} />
             <span className="absolute left-0 rotate-3 hover:-rotate-3 transition-all duration-75 ease-in-out cursor-pointer text-purple-400 bg-[#191919] text-center w-fit h-fit">
-              <SlowType text="Friends" typingSpeed={8000} delay={3000} />
+              <SlowType text="Freunde" typingSpeed={8000} delay={3000} />
             </span>
             <motion.div
               initial={{ width: 0 }}
@@ -265,7 +265,7 @@ interface ContactProps {
 const Contact: React.FC<ContactProps> = ({ url, value, children, most }) => {
   return (
     <>
-      {most && <span className="text-purple-400">MOST ACTIVE</span>}
+      {most && <span className="text-purple-400">Am meisten aktiv</span>}
       <a
         href={url}
         className={`p-2 select-none bg-[#212121] flex h-[60px] w-full group sm:w-fit min-w-[230px] sm:h-[50px] items-center gap-x-2 rounded-md transition-all ease-in duration-100 cursor-pointer ${most ? `border-4 border-purple-800` : `border-transparent border`}  hover:border-purple-400`}
