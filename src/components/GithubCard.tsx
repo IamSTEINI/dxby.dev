@@ -25,7 +25,8 @@ const GithubCard: React.FC<GithubCardProps> = ({
 
       case "JavaScript":
         return "#fff700";
-
+      case "React":
+        return "#5aafff"
       default:
         return "#555555";
     }
