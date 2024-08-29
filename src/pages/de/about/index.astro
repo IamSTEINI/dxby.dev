@@ -10,9 +10,9 @@ import RevealOnHover from "../../../components/ui/RevealOnHover";
 <Layout>
   <main class="w-full h-full flex flex-col justify-center items-center">
     <div
-      class="w-full max-w-[1000px] flex h-fit flex-col items-center justify-start mt-10"
+      class="w-full max-w-[1000px] overflow-hidden flex h-fit flex-col items-center justify-start mt-10"
     >
-      <div class="mt-10 w-10/12 h-fit flex flex-col justify-start">
+      <div class="mt-10 sm:w-10/12 w-full pl-1 pr-1 h-fit flex flex-col justify-start">
         <span
           class="text-[35px] select-none sm:text-3xl relative w-full text-start font-bold tracking-wide text-nowrap"
         >
@@ -28,7 +28,7 @@ import RevealOnHover from "../../../components/ui/RevealOnHover";
             />
           </span>
         </span>
-        <span class="h-[100px] mt-5">
+        <span class="h-fit mt-5">
           <Cypher
             css="text-xl max-w-[700px]"
             text="Relativ jung, aus Deutschland, süchtig nach Musik. Die erste Code datei 2018 angefasst und bis jetzt viel neues gelernt."

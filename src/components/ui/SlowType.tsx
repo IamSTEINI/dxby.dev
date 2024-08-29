@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 interface SlowTypeProps {
   text: string;
   typingSpeed?: number;
-  delay?: number; // Optional delay in milliseconds
+  delay?: number;
 }
 
 const SlowType: React.FC<SlowTypeProps> = ({ text, typingSpeed = 100, delay = 0 }) => {

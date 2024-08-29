@@ -40,26 +40,26 @@ const GithubCard: React.FC<GithubCardProps> = ({
     <div
       className={`w-full flex select-none flex-col items-start mt-1 mb-1 justify-between min-h-[120px] max-h-[320px] h-fit p-5 border ${archived ? `border-[#ffa600] hover:border-[#a77417]` : `border-[#323232] hover:border-purple-400`} transition-all ease-linear  rounded-md`}
     >
-      <div className="flex flex-row items-center justify-between w-full">
+      <div className="flex flex-row items-center overflow-hidden justify-between w-full">
         <div className="flex w-full gap-x-2 items-center">
           <a
             href={link}
-            className="text-2xl text-purple-400 font-semibold hover:underline"
+            className="sm:text-2xl text-lg text-purple-400 text-nowrap font-semibold hover:underline"
           >
             {name}
           </a>
           {working_on && (
-            <p className="text-xs text-pink-500 p-2 pt-1 pb-1 ml-3 bg-transparent border-pink-500 rounded-full border">
-              Working on right now
+            <p className="text-xs text-pink-500 text-nowrap p-2 pt-1 pb-1 ml-3 bg-transparent border-pink-500 rounded-full border">
+              Working
             </p>
           )}
           {no_github && (
-            <p className="text-xs text-[#ffa600] p-2 pt-1 pb-1 ml-3 bg-transparent border-[#ffa600] rounded-full border">
+            <p className="text-xs text-[#ffa600] text-nowrap p-2 pt-1 pb-1 ml-3 bg-transparent border-[#ffa600] rounded-full border">
               No github
             </p>
           )}
           <p
-            className={`text-xs p-2 pt-1 pb-1 bg-transparent ${archived ? `border-blue-600 text-blue-600` : `border-[#323232] text-white/50`} rounded-full border`}
+            className={`text-xs p-2 pt-1 pb-1 bg-transparent text-nowrap ${archived ? `border-blue-600 text-blue-600` : `border-[#323232] text-white/50`} rounded-full border`}
           >
             {archived ? "ARCHIVED" : "Repository"}
           </p>

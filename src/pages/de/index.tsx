@@ -74,7 +74,7 @@ const Home: React.FC = () => {
 
   return (
     <main className="w-full h-full flex flex-col justify-center items-center">
-      <div className="w-full max-w-[1000px] flex h-fit flex-col items-center justify-start mt-10">
+      <div className="w-full max-w-[1000px] overflow-hidden flex h-fit flex-col items-center justify-start mt-10">
         <div className="w-10/12 h-fit flex flex-row justify-start items-center select-none">
           <motion.img
             initial="start"
@@ -129,7 +129,7 @@ const Home: React.FC = () => {
           initial="start"
           animate="end"
           variants={slideInFromBottom(0.6, 0.2)}
-          className="w-10/12 flex justify-start items-center"
+          className="w-10/12 mt-4 sm:mt-2 flex justify-start items-center"
         >
           <a
             href="projects"

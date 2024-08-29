@@ -39,11 +39,11 @@ const Navbar = () => {
             About me
           </a>
         </li>
-        <li>
+        {/* <li>
           <a href={`/${language}/articles`} className="nav-link">
             Articles
           </a>
-        </li>
+        </li> */}
         <ul className="flex flex-row space-x-1 items-center">
           <li>
             <motion.img

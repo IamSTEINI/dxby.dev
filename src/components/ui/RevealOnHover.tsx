@@ -24,7 +24,7 @@ const RevealOnHover: React.FC<Props> = ({ children, text }) => {
       onMouseLeave={() => setIV(false)}
       className="group mt-5 select-none flex overflow-hidden items-center cursor-pointer border hover:border-purple-400 transition-all ease-linear border-[#323232] w-full p-5 rounded-md"
     >
-      <span className="text-xl font-semibold flex items-center opacity-50 gap-x-3 bg-[#111111] z-20">
+      <span className="sm:text-xl text-base font-semibold flex items-center opacity-50 gap-x-3 bg-[#111111] z-20">
         {text}
         <FaArrowRight />
       </span>
