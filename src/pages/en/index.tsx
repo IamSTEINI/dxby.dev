@@ -116,9 +116,9 @@ const Home: React.FC = () => {
           variants={slideInFromRight(0.5, 0.2)}
           className="w-10/12 h-fit flex flex-col justify-start items-start mt-5"
         >
-          <span className="h-[100px]">
+          <span className="h-fit">
             <Cypher
-              css="text-xl max-w-[700px]"
+              css="sm:text-xl text-lg max-w-[700px]"
               text="someone from germany who's self-taught in software and web development and loves Better call saul."
               randomInterval={1}
               revealInterval={30}
@@ -129,7 +129,7 @@ const Home: React.FC = () => {
           initial="start"
           animate="end"
           variants={slideInFromBottom(0.6, 0.2)}
-          className="w-10/12 flex justify-start items-center"
+          className="w-10/12 mt-4 sm:mt-2 flex justify-start items-center"
         >
           <a
             href="projects"
