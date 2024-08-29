@@ -8,6 +8,8 @@ interface GithubCardProps {
   archived?: boolean;
   img_url?: string;
   no_github?: boolean;
+  description?: string;
+  working_on?: boolean;
 }
 
 const GithubCard: React.FC<GithubCardProps> = ({
@@ -17,6 +19,8 @@ const GithubCard: React.FC<GithubCardProps> = ({
   archived,
   img_url,
   no_github,
+  description,
+  working_on,
 }) => {
   const getLangColor = (lang: string) => {
     switch (lang) {
@@ -26,13 +30,12 @@ const GithubCard: React.FC<GithubCardProps> = ({
       case "JavaScript":
         return "#fff700";
       case "React":
-        return "#5aafff"
+        return "#5aafff";
       default:
         return "#555555";
     }
   };
 
-  //TODO: ADD DESCRIPTIONS
   return (
     <div
       className={`w-full flex select-none flex-col items-start mt-1 mb-1 justify-between min-h-[120px] max-h-[320px] h-fit p-5 border ${archived ? `border-[#ffa600] hover:border-[#a77417]` : `border-[#323232] hover:border-purple-400`} transition-all ease-linear  rounded-md`}
@@ -45,6 +48,11 @@ const GithubCard: React.FC<GithubCardProps> = ({
           >
             {name}
           </a>
+          {working_on && (
+            <p className="text-xs text-pink-500 p-2 pt-1 pb-1 ml-3 bg-transparent border-pink-500 rounded-full border">
+              Working on right now
+            </p>
+          )}
           {no_github && (
             <p className="text-xs text-[#ffa600] p-2 pt-1 pb-1 ml-3 bg-transparent border-[#ffa600] rounded-full border">
               No github
@@ -65,6 +73,9 @@ const GithubCard: React.FC<GithubCardProps> = ({
           className="rounded-md object-cover overflow-hidden max-h-[100px] w-full mt-2 mb-2 border-[#323232] border"
           src={img_url}
         ></img>
+      )}
+      {description&& (
+        <span className="mt-1 mb-2 text-white">{description}</span>
       )}
       <div className="flex flex-row gap-x-5">
         <div className="flex flex-row gap-x-1 items-center">
