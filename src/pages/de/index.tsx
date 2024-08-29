@@ -9,6 +9,7 @@ import {
   slideInFromTop,
 } from "@/fmotion";
 import {
+  FaCircleDollarToSlot,
   FaDiscord,
   FaGit,
   FaGithub,
@@ -192,6 +193,19 @@ const Home: React.FC = () => {
             variants={slideInFromBottom(1.3, 0.2)}
             className="w-full"
           >
+            <Contact important url="https://ko-fi.com/dxbyte" value="Dxbyte">
+              <FaCircleDollarToSlot size={32} />
+              <span className="group-hover:opacity-100 opacity-0 group-hover:w-[80px] w-[0px] transition-all ease-in duration-100">
+                Ko-Fi
+              </span>
+            </Contact>
+          </motion.div>
+          <motion.div
+            initial="start"
+            animate="end"
+            variants={slideInFromBottom(1.6, 0.2)}
+            className="w-full"
+          >
             <Contact url="mailto:stein@dxby-dev" value="stein@dxby.dev">
               <FaIdCardClip size={32} />
               <span className="group-hover:opacity-100 opacity-0 group-hover:w-[80px] w-[0px] transition-all ease-in duration-100">
@@ -202,7 +216,7 @@ const Home: React.FC = () => {
           <motion.div
             initial="start"
             animate="end"
-            variants={slideInFromBottom(1.6, 0.2)}
+            variants={slideInFromBottom(1.9, 0.2)}
             className="w-full"
           >
             <Contact url="/public_key.txt" value="xsBNBGbPa...">
@@ -235,10 +249,15 @@ const Home: React.FC = () => {
           </span>
         </motion.div>
         <motion.div
-        initial="start"
-        animate="end"
-        variants={slideInFromBottom(4, 0.2)} className="mt-2 w-10/12 h-fit min-h-[80px] flex gap-2">
-          <a href="https://xvcf.dev" className="p-3 border transition-all ease-in-out duration-100 flex flex-row gap-x-2 rounded-md h-fit w-full sm:w-fit items-center group cursor-pointer hover:bg-[#212121] border-purple-400">
+          initial="start"
+          animate="end"
+          variants={slideInFromBottom(4, 0.2)}
+          className="mt-2 w-10/12 h-fit min-h-[80px] flex gap-2"
+        >
+          <a
+            href="https://xvcf.dev"
+            className="p-3 border transition-all ease-in-out duration-100 flex flex-row gap-x-2 rounded-md h-fit w-full sm:w-fit items-center group cursor-pointer hover:bg-[#212121] border-purple-400"
+          >
             <img
               className="w-[30px] h-[30px] group-hover:w-[40px] group-hover:h-[40px] object-cover rounded-full transition-all ease-in-out duration-100"
               src="https://avatars.githubusercontent.com/u/53903394?v=4"
@@ -259,16 +278,23 @@ interface ContactProps {
   url: string;
   value: string;
   most?: boolean;
+  important?: boolean;
   children?: ReactNode;
 }
 
-const Contact: React.FC<ContactProps> = ({ url, value, children, most }) => {
+const Contact: React.FC<ContactProps> = ({
+  url,
+  important,
+  value,
+  children,
+  most,
+}) => {
   return (
     <>
-      {most && <span className="text-purple-400">Am meisten aktiv</span>}
+      {most && <span className="text-purple-400">MOST ACTIVE</span>}
       <a
         href={url}
-        className={`p-2 select-none bg-[#212121] flex h-[60px] w-full group sm:w-fit min-w-[230px] sm:h-[50px] items-center gap-x-2 rounded-md transition-all ease-in duration-100 cursor-pointer ${most ? `border-4 border-purple-800` : `border-transparent border`}  hover:border-purple-400`}
+        className={`p-2 select-none bg-[#212121] flex h-[60px] w-full group sm:w-fit min-w-[230px] sm:h-[50px] items-center gap-x-2 rounded-md transition-all ease-in duration-100 cursor-pointer ${most ? `border-4 border-purple-800` : `border-transparent border`} ${important ? `border-4 border-purple-800` : `border-transparent border`}  hover:border-purple-400`}
       >
         <div className="text-purple-400 flex flex-row text-nowrap items-center text-xl justify-start gap-x-2">
           {children}
