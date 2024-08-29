@@ -116,7 +116,7 @@ const Home: React.FC = () => {
           variants={slideInFromRight(0.5, 0.2)}
           className="w-10/12 h-fit flex flex-col justify-start items-start mt-5"
         >
-          <span className="h-[100px]">
+          <span className="h-fit">
             <Cypher
               css="text-xl max-w-[700px]"
               text="jemand aus Deutschland, der sich Software- und Webentwicklung selbst beigebracht hat und Better call saul liebt."

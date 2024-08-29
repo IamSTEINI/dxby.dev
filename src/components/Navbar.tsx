@@ -4,7 +4,7 @@ import "./css/navbar.css";
 import LiveTimeComponent from "./LivetimeComponent";
 
 const Navbar = () => {
-  const [language, setLanguage] = useState("en"); // Assuming "en" as default language
+  const [language, setLanguage] = useState("en");
 
   useEffect(() => {
     const path = window.location.pathname;
